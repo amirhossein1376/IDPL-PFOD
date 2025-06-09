@@ -104,9 +104,17 @@ background type and applied effects.
 
 ## Utility Functions
 Two helper functions in `persian_utils.py` generate Persian numbers and dates.
+You can also render the outputs as images with noisy or plain backgrounds.
 
 ```python
-from persian_utils import generate_persian_number, get_persian_date
+from persian_utils import (
+    generate_persian_number, get_persian_date,
+    generate_persian_number_image, get_persian_date_image,
+)
 print(generate_persian_number())  # ۱۰-digit Persian digits
-print(get_persian_date())        # current Persian date
+img = generate_persian_number_image()
+img.save("number.png")
+print(get_persian_date())        # random Persian date
+img = get_persian_date_image()
+img.save("date.png")
 ```

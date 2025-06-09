@@ -53,6 +53,31 @@ IDPL-PFOD:
 
  + *We used part of the code published [here](https://github.com/Belval/TextRecognitionDataGenerator) to add SineWave distortion to our images.*
 
+## Synthetic data generation script
+
+To help researchers recreate and extend the dataset, `generate_farsi_dataset.py`
+provides a simple way to render Farsi text line images using any set of fonts
+and optional background pictures.
+
+### Usage
+
+```bash
+python generate_farsi_dataset.py \
+    --font-dir path/to/fonts \
+    --bg-dir path/to/backgrounds \
+    --text-file path/to/farsi_lines.txt \
+    --output-dir dataset
+```
+
+* `--font-dir` should contain TTF fonts and can include far more than the
+  original 11 used for IDPL-PFOD.
+* `--bg-dir` may contain any images to be resized and used as background
+  textures in addition to the plain white and noisy options.
+* `--text-file` is a UTF‑8 file with one line of Farsi text per row.
+
+The script saves images and a `labels.csv` file describing font, size,
+background type and applied effects.
+
 ## Summary of IDPL-PFOD
 | | **Plain white** | **Noisy** | **Texture** | **Total images**| **Total Lines** | **Total Words** |
 :-:|:-:|:-:|:-:|:-:|:-:|:-:

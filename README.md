@@ -101,3 +101,12 @@ background type and applied effects.
 ![](images/00007.png)
 #### 
 ![](images/00008.png)
+
+## Utility Functions
+Two helper functions in `persian_utils.py` generate Persian numbers and dates.
+
+```python
+from persian_utils import generate_persian_number, get_persian_date
+print(generate_persian_number())  # ۱۰-digit Persian digits
+print(get_persian_date())        # current Persian date
+```
